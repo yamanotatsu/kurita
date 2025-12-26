@@ -58,25 +58,48 @@ export default function Home() {
 
       {/* ヒーローセクション */}
       <section className={styles.hero}>
-        <div className={styles.heroGrid}>
-          <div className={`${styles.heroContent} ${loaded ? styles.heroVisible : ''}`}>
-            <p className={styles.heroLabel}>Portfolio 2024</p>
+        <div className={styles.heroBackground}>
+          <div className={styles.heroLine}></div>
+          <div className={styles.heroLine}></div>
+          <div className={styles.heroLine}></div>
+          <div className={styles.heroLine}></div>
+          <div className={styles.heroLine}></div>
+        </div>
+        <div className={styles.heroInner}>
+          <div className={`${styles.heroTop} ${loaded ? styles.heroVisible : ''}`}>
+            <span className={styles.heroYear}>2024</span>
+            <span className={styles.heroDivider}></span>
+            <span className={styles.heroLocation}>Tokyo, Japan</span>
+          </div>
+          
+          <div className={`${styles.heroCenter} ${loaded ? styles.heroVisible : ''}`}>
             <h1 className={styles.heroTitle}>
-              <span className={styles.heroTitleLine}>栗田まんこ星</span>
+              <span className={styles.heroTitleMain}>栗田まんこ星</span>
+              <span className={styles.heroTitleSub}>Kurita Mankoboshi</span>
             </h1>
-            <p className={styles.heroDesc}>
-              創造性と論理性を融合させ、<br />
-              新しい価値を生み出す
+          </div>
+
+          <div className={`${styles.heroBottom} ${loaded ? styles.heroVisible : ''}`}>
+            <p className={styles.heroTagline}>
+              <span className={styles.taglineWord}>Creative</span>
+              <span className={styles.taglineDot}></span>
+              <span className={styles.taglineWord}>Strategic</span>
+              <span className={styles.taglineDot}></span>
+              <span className={styles.taglineWord}>Visionary</span>
             </p>
           </div>
-          <div className={`${styles.heroVisual} ${loaded ? styles.heroVisible : ''}`}>
-            <div className={styles.heroCircle}></div>
-            <div className={styles.heroCircleSmall}></div>
+
+          <div className={styles.heroAccent}>
+            <div className={styles.accentCircle}></div>
+            <div className={styles.accentRing}></div>
           </div>
         </div>
-        <div className={styles.scrollLine}>
-          <span>Scroll</span>
-          <div className={styles.scrollLineBar}></div>
+        
+        <div className={styles.scrollIndicator}>
+          <div className={styles.scrollMouse}>
+            <div className={styles.scrollWheel}></div>
+          </div>
+          <span className={styles.scrollText}>Scroll to explore</span>
         </div>
       </section>
 
@@ -275,3 +298,4 @@ export default function Home() {
     </div>
   )
 }
+
