@@ -1,30 +1,42 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import styles from './page.module.css'
 
 function useIntersectionObserver(threshold = 0.1) {
   const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
+  const elementRef = useRef<HTMLElement | null>(null)
+  const observerRef = useRef<IntersectionObserver | null>(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold }
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
+  const setRef = useCallback((node: HTMLElement | null) => {
+    // 前のobserverをクリーンアップ
+    if (observerRef.current) {
+      observerRef.current.disconnect()
     }
 
-    return () => observer.disconnect()
+    if (node) {
+      observerRef.current = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+          }
+        },
+        { threshold }
+      )
+      observerRef.current.observe(node)
+      elementRef.current = node
+    }
   }, [threshold])
 
-  return { ref, isVisible }
+  useEffect(() => {
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect()
+      }
+    }
+  }, [])
+
+  return { ref: setRef, isVisible }
 }
 
 export default function Home() {
@@ -155,8 +167,10 @@ export default function Home() {
           </div>
           <div className={styles.philosophyContent}>
             <blockquote className={styles.philosophyQuote}>
-              「本質を見極め、<br />
-              シンプルに、<br />
+              「本質を見極め、
+              <br />
+              シンプルに、
+              <br />
               力強く。」
             </blockquote>
             <p className={styles.philosophyText}>
