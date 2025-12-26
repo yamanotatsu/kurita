@@ -398,9 +398,77 @@
 /* プロフィールセクション */
 .profileContent {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  grid-template-columns: 350px 1fr;
+  gap: 4rem;
   align-items: start;
+}
+
+.profileImageWrapper {
+  position: relative;
+}
+
+.profileImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.profileImage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 50%,
+    rgba(201, 85, 61, 0.1) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.profileImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(20%) contrast(1.05);
+  transition: all 0.5s var(--ease-out-expo);
+}
+
+.profileImage:hover img {
+  filter: grayscale(0%) contrast(1.1);
+  transform: scale(1.03);
+}
+
+.profileImageBadge {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  width: 60px;
+  height: 60px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(201, 85, 61, 0.4);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .profileName {
@@ -433,6 +501,16 @@
   font-size: 1rem;
   color: var(--color-text-secondary);
   line-height: 2;
+}
+
+.profileNote {
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-accent-light);
+  border-radius: 4px;
+  border-left: 3px solid var(--color-accent);
 }
 
 .profileDetails {
@@ -679,7 +757,12 @@
 
   .profileContent {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
+  }
+
+  .profileImageWrapper {
+    max-width: 300px;
+    margin: 0 auto;
   }
 
   .philosophyContent {

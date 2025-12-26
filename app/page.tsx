@@ -93,11 +93,11 @@ export default function Home() {
 
           <div className={`${styles.heroBottom} ${loaded ? styles.heroVisible : ''}`}>
             <p className={styles.heroTagline}>
-              <span className={styles.taglineWord}>Creative</span>
+              <span className={styles.taglineWord}>Crispy</span>
               <span className={styles.taglineDot}></span>
-              <span className={styles.taglineWord}>Strategic</span>
+              <span className={styles.taglineWord}>Juicy</span>
               <span className={styles.taglineDot}></span>
-              <span className={styles.taglineWord}>Visionary</span>
+              <span className={styles.taglineWord}>Finger Lickin&apos; Good</span>
             </p>
           </div>
 
@@ -127,27 +127,38 @@ export default function Home() {
             <h2 className={styles.sectionTitle}>Profile</h2>
           </div>
           <div className={styles.profileContent}>
-            <div className={styles.profileText}>
-              <h3 className={styles.profileName}>栗田まんこ星</h3>
-              <p className={styles.profileKana}>Kurita Mankoboshi</p>
-              <p className={styles.profileRole}>Creative Professional</p>
-              <p className={styles.profileBio}>
-                様々な分野で培った経験を活かし、プロジェクトに新しい視点と価値を提供します。
-                常に学び続け、チームと共に成長することを大切にしています。
-              </p>
+            <div className={styles.profileImageWrapper}>
+              <div className={styles.profileImage}>
+                <img src="/kurita.png" alt="栗田まんこ星" />
+              </div>
+              <div className={styles.profileImageBadge}>🍗</div>
             </div>
-            <div className={styles.profileDetails}>
+            <div className={styles.profileInfo}>
+              <div className={styles.profileText}>
+                <h3 className={styles.profileName}>栗田まんこ星</h3>
+                <p className={styles.profileKana}>Kurita Mankoboshi</p>
+                <p className={styles.profileRole}>KFC Specialist</p>
+                <p className={styles.profileBio}>
+                  ケンタッキーフライドチキンにて、フライヤー技術とカスタマーサービスの最前線で経験を積む。
+                  オリジナルチキンの調理から接客まで、店舗オペレーションの全領域を網羅するスペシャリスト。
+                </p>
+                <p className={styles.profileNote}>
+                  ※ 最近フラれました。現在、心の傷を癒し中です。
+                </p>
+              </div>
+              <div className={styles.profileDetails}>
               <div className={styles.profileDetailItem}>
                 <span className={styles.detailLabel}>Location</span>
                 <span className={styles.detailValue}>Tokyo, Japan</span>
               </div>
               <div className={styles.profileDetailItem}>
                 <span className={styles.detailLabel}>Expertise</span>
-                <span className={styles.detailValue}>Strategy & Creative</span>
+                <span className={styles.detailValue}>Fried Chicken Master</span>
               </div>
               <div className={styles.profileDetailItem}>
                 <span className={styles.detailLabel}>Experience</span>
                 <span className={styles.detailValue}>10+ Years</span>
+              </div>
               </div>
             </div>
           </div>
@@ -167,17 +178,17 @@ export default function Home() {
           </div>
           <div className={styles.philosophyContent}>
             <blockquote className={styles.philosophyQuote}>
-              「本質を見極め、
+              「一羽のチキンに、
               <br />
-              シンプルに、
+              魂を込める。
               <br />
-              力強く。」
+              それが俺の生き様。」
             </blockquote>
             <p className={styles.philosophyText}>
-              複雑な問題をシンプルな解決策へと導くこと。
-              それが私の仕事に対する基本姿勢です。
-              表面的な華やかさではなく、本質的な価値を追求し、
-              長く愛されるものを創り出すことを目指しています。
+              カーネル・サンダースは65歳で全てを失い、車で眠りながらレシピを売り歩いた。
+              1009回断られても、諦めなかった。その精神を、俺は受け継ぐ。
+              圧力フライヤーの前に立つとき、俺は単なるバイトじゃない。
+              11種のハーブ&スパイスを纏った黄金の翼を、世界に届ける使者だ。
             </p>
           </div>
         </div>
@@ -198,12 +209,13 @@ export default function Home() {
             <div className={styles.skillCard}>
               <div className={styles.skillIcon}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                 </svg>
               </div>
-              <h4 className={styles.skillTitle}>Strategic Thinking</h4>
+              <h4 className={styles.skillTitle}>🍗 Original Recipe Master</h4>
               <p className={styles.skillDesc}>
-                課題の本質を見極め、最適な解決策を導き出す戦略的思考力
+                門外不出の11種ハーブ&スパイス。185℃の圧力フライヤーで15分。
+                この黄金律を体に刻み込んだ者だけが、真のオリジナルチキンを揚げられる。
               </p>
             </div>
             <div className={styles.skillCard}>
@@ -213,9 +225,10 @@ export default function Home() {
                   <path d="M12 6v6l4 2"/>
                 </svg>
               </div>
-              <h4 className={styles.skillTitle}>Project Management</h4>
+              <h4 className={styles.skillTitle}>🔥 Rush Hour Warrior</h4>
               <p className={styles.skillDesc}>
-                複雑なプロジェクトを円滑に推進し、成果へと導くマネジメント力
+                クリスマス、地獄のランチタイム。オーダーが鳴り止まない戦場で、
+                俺は冷静にチキンを揚げ続ける。パニックは敵。冷静さが武器。
               </p>
             </div>
             <div className={styles.skillCard}>
@@ -226,20 +239,23 @@ export default function Home() {
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
                 </svg>
               </div>
-              <h4 className={styles.skillTitle}>Team Leadership</h4>
+              <h4 className={styles.skillTitle}>😊 Smile ¥0 Spirit</h4>
               <p className={styles.skillDesc}>
-                多様なメンバーの力を引き出し、チームの成果を最大化するリーダーシップ
+                「いらっしゃいませ、ケンタッキーへようこそ！」
+                この一言に、俺の全てを込める。笑顔は無料、だが価値は無限大。
               </p>
             </div>
             <div className={styles.skillCard}>
               <div className={styles.skillIcon}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <path d="M8 21h8M12 17v4"/>
                 </svg>
               </div>
-              <h4 className={styles.skillTitle}>Creative Direction</h4>
+              <h4 className={styles.skillTitle}>🛒 Inventory Commander</h4>
               <p className={styles.skillDesc}>
-                ビジョンを形にし、一貫性のあるクリエイティブを生み出す力
+                チキンの在庫が切れる？ありえない。
+                需要予測、発注管理、廃棄ロス最小化。見えない戦いを制する者が、店を制する。
               </p>
             </div>
           </div>
@@ -259,24 +275,31 @@ export default function Home() {
           </div>
           <div className={styles.careerTimeline}>
             <div className={styles.careerItem}>
-              <div className={styles.careerYear}>2024 —</div>
+              <div className={styles.careerYear}>Current</div>
               <div className={styles.careerContent}>
-                <h4>現在のポジション</h4>
-                <p>新たな挑戦と成長を続けながら、より大きな価値創造を目指しています。</p>
+                <h4>🍗 ケンタッキーフライドチキン</h4>
+                <p>フライヤーの前に立ち、カーネルの魂を継承する日々。オリジナルチキンを極め、店舗オペレーションの全てを担う。</p>
               </div>
             </div>
             <div className={styles.careerItem}>
-              <div className={styles.careerYear}>2020 — 2023</div>
+              <div className={styles.careerYear}>University</div>
               <div className={styles.careerContent}>
-                <h4>リーダーシップの発揮</h4>
-                <p>チームを率いて複数の重要プロジェクトを成功に導きました。</p>
+                <h4>九州工業大学</h4>
+                <p>電気電子工学を専攻。しかし、真の学びはケンタッキーの厨房にあった。</p>
               </div>
             </div>
             <div className={styles.careerItem}>
-              <div className={styles.careerYear}>2015 — 2019</div>
+              <div className={styles.careerYear}>High School</div>
               <div className={styles.careerContent}>
-                <h4>専門性の確立</h4>
-                <p>様々な経験を通じて、独自の強みとスタイルを確立しました。</p>
+                <h4>松山東高校</h4>
+                <p>文武両道の精神のもと、学業と課外活動に励み、多角的な視点を養いました。</p>
+              </div>
+            </div>
+            <div className={styles.careerItem}>
+              <div className={styles.careerYear}>Junior High</div>
+              <div className={styles.careerContent}>
+                <h4>内宮中学校</h4>
+                <p>好奇心と探究心を育み、将来への土台となる基礎を築いた原点です。</p>
               </div>
             </div>
           </div>
