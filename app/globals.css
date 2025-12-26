@@ -1,0 +1,39 @@
+:root {
+  --color-bg: #FAFAF8;
+  --color-bg-alt: #F0EFEB;
+  --color-text: #1A1A1A;
+  --color-text-secondary: #6B6B6B;
+  --color-text-muted: #9A9A9A;
+  --color-accent: #C9553D;
+  --color-accent-light: #E8D5D0;
+  --color-border: #E5E5E0;
+  --font-ja: 'Zen Kaku Gothic New', sans-serif;
+  --font-en: 'Cormorant Garamond', serif;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-ja);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.8;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
